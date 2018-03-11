@@ -35,7 +35,7 @@ public:
 	void Reset(); //TODO make a more rich return value.
 	
 	//Provide a method for counting bulls and cows and increasing tries count
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 	//ignore on private just focus on public interface above
 private:
@@ -43,7 +43,7 @@ private:
 	int32 MyCurrentTry ;
 	int32 MyMaxTries ;
 	FString MyHiddenWord;
-	
+	bool bIsGameWon;
 	//bool IsIsogram(string);
 
 
