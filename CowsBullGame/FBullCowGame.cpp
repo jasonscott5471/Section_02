@@ -1,6 +1,8 @@
 #include "FBullCowGame.h"
 using int32 = int;
 
+//test git push
+
 FBullCowGame::FBullCowGame()
 {
 	//constructors
@@ -47,12 +49,12 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString myGuess) const
 	//guess not isogram; NOT implemented yet
 	if (false)
 	{
-		return EGuessStatus::Not_Isogram;
+		return EGuessStatus::Not_Isogram; //TODO write function
 	}
 	//guess not all lowercase
 	else if (false)
 	{
-		return EGuessStatus::Not_Lowercase;
+		return EGuessStatus::Not_Lowercase; //TODO write function
 
 	}
 	//guess length wrong - too short
