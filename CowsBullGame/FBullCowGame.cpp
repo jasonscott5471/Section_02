@@ -1,4 +1,7 @@
 #include "FBullCowGame.h"
+#include <map>
+#define TMap std::map //doing this until we wire up for real in unreal. This is essentially use the TMap word but connecting to our own library which is std
+
 using int32 = int;
 
 //test git push
@@ -47,7 +50,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString myGuess) const
 	//return EGuessStatus::OK; //TODO make actual check if error or valid
 	
 	//guess not isogram; NOT implemented yet
-	if (false)
+	if (!IsIsogram(myGuess))
 	{
 		return EGuessStatus::Not_Isogram; //TODO write function
 	}
@@ -116,4 +119,16 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 	else { bIsGameWon = false; }
 
 	return BullCowCount;
+}
+
+bool FBullCowGame::IsIsogram(FString Word) const
+{
+	//consider 0 and 1 length as isogram
+
+	//loop through all the letters
+		//if letter in the map
+			//not isogram
+		//otherwise
+			//add letter to the map
+	return true;
 }
