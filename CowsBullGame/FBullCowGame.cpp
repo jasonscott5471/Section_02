@@ -55,7 +55,8 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString myGuess) const
 		return EGuessStatus::Not_Isogram; //TODO write function
 	}
 	//guess not all lowercase
-	else if (false)
+	//else if (false)
+	else if (!IsLowerCase(myGuess))
 	{
 		return EGuessStatus::Not_Lowercase; //TODO write function
 
@@ -124,11 +125,43 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 bool FBullCowGame::IsIsogram(FString Word) const
 {
 	//consider 0 and 1 length as isogram
+	if (Word.length() <= 1) { return true; }
 
-	//loop through all the letters
-		//if letter in the map
-			//not isogram
-		//otherwise
-			//add letter to the map
+	TMap<char, bool> LetterSeen; //setup our map
+
+	for (auto Letter : Word)   // remember : stands for "in" . So this will loop through all letters in variable Word
+								// auto is synomonous in C++ as is object in VB; ie compiler figures out what is appropriate
+								// auto should only be used in private declarations section or is recommended by tutor
+
+
+	{
+		Letter = tolower(Letter); //convert so we can do like comparison even if user has inputted upper and lower case letters
+		//loop through all the letters
+
+		if (LetterSeen[Letter]) {//if letter in the map
+			return false; //not isogram
+		}
+		else {
+			LetterSeen[Letter] = true; //add letter to the map
+		}
+		
+	}
+	return true;
+
+}
+
+bool FBullCowGame::IsLowerCase(FString Word) const
+{
+	TMap<char, bool> LetterSeen; //setup our map
+
+	for (auto Letter : Word)
+	{
+		if (isupper(Letter) )
+		{ 
+			return false; 
+		}
+		
+	}
+
 	return true;
 }
