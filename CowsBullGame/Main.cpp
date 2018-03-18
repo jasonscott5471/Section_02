@@ -4,11 +4,15 @@ This acts as the view in MVC pattern and is responsible for all user interaction
 For game logic see the FBullCowGame class.
 */
 
+#pragma once  //make the compiler include the file only once
+
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
 //using FText as its used in unreal engine, along with FString
+//just trying to get used to unreal syntax even if we are substituting libraries for now
+
 using FText = std::string;
 using int32 = int;
 
@@ -16,6 +20,7 @@ using int32 = int;
 //not good practice in c++ hence we are removing all namespace references
 //using namespace std;
 
+//because we don't have a header file function prototypes are defined here instead
 void PrintIntro();
 void PlayGame();
 FText GetValidGuess();

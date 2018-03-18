@@ -1,6 +1,11 @@
+/*
+The game logic (no view code or direct user interaction here.
+*/
+
 #pragma once
 #include <string>
 
+//just trying to get used to unreal syntax even if we are substituting libraries for now
 using FString = std::string;
 using int32 = int; //we are only doing this in order to get used to using int32 instead of int which is required in unreal due to compiling to different platforms
 
@@ -32,7 +37,7 @@ public:
 	//bool CheckGuessValidity(FString) const;
 	EGuessStatus CheckGuessValidity(FString) const;
 
-	void Reset(); //TODO make a more rich return value.
+	void Reset(); 
 	
 	//Provide a method for counting bulls and cows and increasing tries count
 	FBullCowCount SubmitValidGuess(FString);
